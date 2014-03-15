@@ -45,3 +45,7 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# Ember Support
+gem "active_model_serializers"
+gem "ember-rails"

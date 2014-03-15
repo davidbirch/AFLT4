@@ -13,4 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require jquery
+//= require handlebars
+//= require ember
+//= require ember-data
+//= require_self
+//= require aflt4
+
+// for more details see: http://emberjs.com/guides/application/
+AFLT4 = Ember.Application.create();
+
 //= require_tree .
