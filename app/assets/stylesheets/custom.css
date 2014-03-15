@@ -1,0 +1,16 @@
+/*
+ * This is the custom CSS
+ *
+ */
+
+body{
+    background-image: url(/assets/body.png),none;   
+}
+.navbar{
+    background-image: url(/assets/header.png);
+    border-bottom: 1px solid #aa412f;
+    z-index: 10;
+    -webkit-box-shadow: rgba(0,0,0,0.3) 0 0 3px;
+    -moz-box-shadow: rgba(0,0,0,0.3) 0 0 3px;
+    box-shadow: rgba(0,0,0,0.3) 0 0 3px;
+}
