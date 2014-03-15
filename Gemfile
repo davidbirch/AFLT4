@@ -49,3 +49,6 @@ end
 # Ember Support
 gem "active_model_serializers"
 gem "ember-rails"
+
+# Use Tweetstream
+gem 'tweetstream'
