@@ -1,7 +1,14 @@
         <div class="row">
         <div class="col-lg-9">
-            <h1>The about page</h1>
-            <p>this is the about page</p>
+            <h1>List of tweets</h1>
+            <p>this is the list of tweets</p>
+            <ul class="tweets">
+              {{#each}}
+                <li>{{tweetText}} <strong>({{twitterUser.name}})</strong></li>
+              {{else}}
+                <li>There are no tweets.</li>
+              {{/each}}
+            </ul>
         </div>
         <div class="col-lg-3">
           <div class="well sidebar-nav">
@@ -19,3 +26,4 @@
       <footer>
         <p>&copy; Company 2014</p>
       </footer>
+  
