@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20140316035129) do
     t.string   "tweet_text"
     t.datetime "tweet_created_at"
     t.integer  "tweet_guid",       limit: 8
+    t.string   "tweet_source"
     t.integer  "twitter_user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -33,6 +34,7 @@ ActiveRecord::Schema.define(version: 20140316035129) do
     t.string   "name"
     t.string   "screen_name"
     t.integer  "user_guid",                    limit: 8
+    t.string   "profile_background_colour"
     t.string   "profile_background_image_url"
     t.datetime "created_at"
     t.datetime "updated_at"
