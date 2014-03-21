@@ -1,16 +1,26 @@
         <div class="row">
-        <div class="col-lg-9">
+          <div class="col-lg-12">
             <h1>List of tweets</h1>
             <p>this is the list of tweets</p>
-            <ul class="tweets">
-              {{#each}}
-                <li>{{tweetText}} <strong>({{twitterUser.name}})</strong></li>
-              {{else}}
-                <li>There are no tweets.</li>
-              {{/each}}
-            </ul>
+          </div>
         </div>
-        <div class="col-lg-3">
+        <div class="row">
+        <div class="col-lg-4">
+          <div class="tweet_list">
+            {{#each Tweet in controller}}
+            <div class="tweet">
+              <a {{bind-attr href=Tweet.twitterUser.twitterUrl}} {{bind-attr title=Tweet.twitterUser.screenName}}>
+                <img {{bind-attr src=Tweet.twitterUser.profileBackgroundImageUrl}} width="48" height="48">
+              </a>		
+            </div>
+              
+              <p>A: {{Tweet.tweetText}}</p>
+              <p>B: {{Tweet.twitterUser.twitterUrl}}</p>
+              <p>C: {{Tweet.twitterUser.screenName}}</p>
+            {{/each}}
+          </div>
+        </div>
+        <div class="col-lg-8">
           <div class="well sidebar-nav">
             <h3>Sidebar</h3>
             <ul class="nav nav-list">

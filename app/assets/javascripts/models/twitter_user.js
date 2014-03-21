@@ -7,5 +7,9 @@ AFLT4.TwitterUser = DS.Model.extend({
   profileBackgroundColour: DS.attr('string'),
   profileBackgroundImageUrl: DS.attr('string'),
   
-  tweets: DS.hasMany('AFLT4.Tweet')
+  tweets: DS.hasMany('AFLT4.Tweet'),
+  
+  twitterUrl: function() {
+    return 'http://www.twitter.com/' + this.get('screenName');
+  }.property('screenName')
 });
