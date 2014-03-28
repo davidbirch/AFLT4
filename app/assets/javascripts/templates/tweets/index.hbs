@@ -5,22 +5,36 @@
           </div>
         </div>
         <div class="row">
-        <div class="col-lg-4">
+        <div class="col-lg-6">
           <div class="tweet_list">
             {{#each Tweet in controller}}
             <div class="tweet">
-              <a {{bind-attr href=Tweet.twitterUser.twitterUrl}} {{bind-attr title=Tweet.twitterUser.screenName}}>
-                <img {{bind-attr src=Tweet.twitterUser.profileBackgroundImageUrl}} width="48" height="48">
-              </a>		
+              <div class="tweet_image">
+                <a {{bind-attr href=Tweet.twitterUser.twitterUrl}} {{bind-attr title=Tweet.twitterUser.screenName}}>
+                  <img {{bind-attr src=Tweet.twitterUser.profileBackgroundImageUrl}} width="48" height="48">
+                </a>
+              </div>
+              <div class="tweet_right">
+                <div class="tweet_screen_name">
+                  <a {{bind-attr href=Tweet.twitterUser.twitterUrl}} {{bind-attr title=Tweet.twitterUser.screenName}}>
+                    {{Tweet.twitterUser.screenName}}
+                  </a>
+                  <span class="tweet_name">{{Tweet.twitterUser.name}}</span>
+                </div>
+                <div class="tweet_text">{{Tweet.tweetText}}
+                  <div class="tweet_date">
+                    <a {{bind-attr href=Tweet.originalTweetUrl}} {{bind-attr title=Tweet.twitterUser.screenName}}>
+                      One day ago {{Tweet.originalTweetUrlThree}}
+                    </a>
+                  </div>
+                </div>
+              </div>  
             </div>
-              
-              <p>A: {{Tweet.tweetText}}</p>
-              <p>B: {{Tweet.twitterUser.twitterUrl}}</p>
-              <p>C: {{Tweet.twitterUser.screenName}}</p>
+            <hr>
             {{/each}}
           </div>
         </div>
-        <div class="col-lg-8">
+        <div class="col-lg-6">
           <div class="well sidebar-nav">
             <h3>Sidebar</h3>
             <ul class="nav nav-list">

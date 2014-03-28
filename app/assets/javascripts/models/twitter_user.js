@@ -1,4 +1,5 @@
 // for more details see: http://emberjs.com/guides/models/defining-models/
+// .property means cache the result unless any of the values change
 
 AFLT4.TwitterUser = DS.Model.extend({
   name: DS.attr('string'),
@@ -12,4 +13,5 @@ AFLT4.TwitterUser = DS.Model.extend({
   twitterUrl: function() {
     return 'http://www.twitter.com/' + this.get('screenName');
   }.property('screenName')
+  
 });
