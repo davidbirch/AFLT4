@@ -22,7 +22,7 @@ class RawTweet < ActiveRecord::Base
     twitter_user_profile_image_url = tweet_hash["user"]["profile_image_url"]
     
     # create the TwitterUser
-    twitter_user = TwitterUser.find_or_create_by(user_guid: twitter_user_guid) do |u|
+    user = User.find_or_create_by(user_guid: twitter_user_guid) do |u|
       u.name = twitter_user_name
       u.screen_name = twitter_user_screen_name
       u.user_guid = twitter_user_guid
@@ -31,7 +31,7 @@ class RawTweet < ActiveRecord::Base
     end
     
     # create the Tweet
-    tweet = twitter_user.Tweets.find_or_create_by(tweet_guid: tweet_guid) do |t|
+    tweet = user.tweets.find_or_create_by(tweet_guid: tweet_guid) do |t|
       t.tweet_text = tweet_text
       t.tweet_source = tweet_source
       t.tweet_created_at = tweet_original_created_at

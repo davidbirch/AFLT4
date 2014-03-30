@@ -25,12 +25,12 @@ ActiveRecord::Schema.define(version: 20140316035129) do
     t.datetime "tweet_created_at"
     t.integer  "tweet_guid",       limit: 8
     t.string   "tweet_source"
-    t.integer  "twitter_user_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "twitter_users", force: true do |t|
+  create_table "users", force: true do |t|
     t.string   "name"
     t.string   "screen_name"
     t.integer  "user_guid",                    limit: 8

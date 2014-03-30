@@ -6,17 +6,13 @@ AFLT4.Tweet = DS.Model.extend({
   tweetCreatedAt: DS.attr('date'),
   tweetGuid: DS.attr('number'),
   tweetSource: DS.attr('string'),
-  twitterUserId: DS.attr('number'),
+  userId: DS.attr('number'),
   
-  twitterUser: DS.belongsTo('AFLT4.TwitterUser'),
+  user: DS.belongsTo('AFLT4.User'),
     
   originalTweetUrl: function() {
     var guid = this.get('tweetGuid');
-    return "http://www.twitter.com/" + this.get('twitterUser.screenName') + "/status/" + guid;
-  }.property('twitterUser.screenName', 'tweetGuid'),
+    return "http://www.twitter.com/" + this.get('user.screenName') + "/status/" + guid;
+  }.property('user.screenName', 'tweetGuid'),
   
-  originalTweetUrlTwo: function() {
-    return "http://www.twitter.com/" + this.get('twitterUser.screenName') + "/status/" + this.get('tweetGuid');
-  }.property(),
-    
 });

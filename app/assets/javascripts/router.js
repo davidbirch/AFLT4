@@ -4,6 +4,6 @@ AFLT4.Router.map(function() {
   this.route("about");
   this.resource("tweets", function() {
     });
-  this.resource("twitter_users", function() {
+  this.resource("users", function() {
     });
 });

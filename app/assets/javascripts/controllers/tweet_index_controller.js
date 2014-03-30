@@ -1,4 +1,4 @@
 AFLT4.TweetsIndexController = Ember.ArrayController.extend({
-  sortProperties: ['id'],
+  sortProperties: ['tweetCreatedAt'],
   sortAscending: false // false for descending
 });

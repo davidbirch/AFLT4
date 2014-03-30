@@ -5,7 +5,7 @@ class CreateTweets < ActiveRecord::Migration
       t.datetime :tweet_created_at
       t.column :tweet_guid, :bigint # manually changed from int to bigint
       t.string :tweet_source
-      t.integer :twitter_user_id
+      t.integer :user_id
 
       t.timestamps
     end

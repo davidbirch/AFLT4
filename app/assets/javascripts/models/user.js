@@ -1,7 +1,7 @@
 // for more details see: http://emberjs.com/guides/models/defining-models/
 // .property means cache the result unless any of the values change
 
-AFLT4.TwitterUser = DS.Model.extend({
+AFLT4.User = DS.Model.extend({
   name: DS.attr('string'),
   screenName: DS.attr('string'),
   userGuid: DS.attr('number'),
