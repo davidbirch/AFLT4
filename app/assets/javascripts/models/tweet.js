@@ -6,9 +6,12 @@ AFLT4.Tweet = DS.Model.extend({
   tweetCreatedAt: DS.attr('date'),
   tweetGuid: DS.attr('number'),
   tweetSource: DS.attr('string'),
-  userId: DS.attr('number'),
   
+  userId: DS.attr('number'),
   user: DS.belongsTo('AFLT4.User'),
+  
+  collectionId: DS.attr('number'),
+  collection: DS.belongsTo('AFLT4.Collection'),
     
   originalTweetUrl: function() {
     var guid = this.get('tweetGuid');

@@ -1,7 +1,11 @@
 class Api::V1::TweetsController < ApplicationController
   respond_to :json # default to Active Model Serializers
   def index
-    respond_with Tweet.all
+    if params[:ids]
+      respond_with Tweet.find(params[:ids])
+    else
+      respond_with Tweet.all
+    end  
   end
 
   def show

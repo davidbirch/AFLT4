@@ -1,6 +1,6 @@
 AFLT4.TweetsIndexRoute = Ember.Route.extend({
   model: function() {
-    return AFLT4.Tweet.find();
+    return AFLT4.Collection.find();
   },
   activate: function(){
     AFLT4.Pollster.start();
@@ -21,6 +21,6 @@ AFLT4.Pollster = {
   onPoll: function(){
     // call a refresh from the store here
     // AFLT4.Tweet.refresh();
-    AFLT4.Tweet.find();
+    AFLT4.Collection.find();
   }
 };

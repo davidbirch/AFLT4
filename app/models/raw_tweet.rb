@@ -21,8 +21,12 @@ class RawTweet < ActiveRecord::Base
     twitter_user_screen_name = tweet_hash["user"]["screen_name"]
     twitter_user_profile_image_url = tweet_hash["user"]["profile_image_url"]
     
+    # create the Collection if it doesnt exist
+    collection = Collection.first
+    collection = Collection.create if collection.nil?
+        
     # create the TwitterUser
-    user = User.find_or_create_by(user_guid: twitter_user_guid) do |u|
+    user = collection.users.find_or_create_by(user_guid: twitter_user_guid) do |u|
       u.name = twitter_user_name
       u.screen_name = twitter_user_screen_name
       u.user_guid = twitter_user_guid
@@ -36,6 +40,7 @@ class RawTweet < ActiveRecord::Base
       t.tweet_source = tweet_source
       t.tweet_created_at = tweet_original_created_at
       t.tweet_guid = tweet_guid
+      t.collection_id = user.collection.id
       t.save
     end
     

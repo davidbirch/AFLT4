@@ -8,6 +8,9 @@ AFLT4.User = DS.Model.extend({
   profileBackgroundColour: DS.attr('string'),
   profileBackgroundImageUrl: DS.attr('string'),
   
+  collectionId: DS.attr('number'),
+  collection: DS.belongsTo('AFLT4.Collection'),
+  
   tweets: DS.hasMany('AFLT4.Tweet'),
   
   twitterUrl: function() {

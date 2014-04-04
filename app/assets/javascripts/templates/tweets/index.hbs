@@ -7,30 +7,32 @@
         <div class="row">
         <div class="col-lg-6">
           <div class="tweet_list">
-            {{#each Tweet in controller}}
-            <div class="tweet">
+            {{#each collection in controller}}
+              {{#each tweet in collection.tweets}}
+                <div class="tweet">
               <div class="tweet_image">
-                <a {{bind-attr href=Tweet.user.twitterUrl}} {{bind-attr title=Tweet.user.screenName}}>
-                  <img {{bind-attr src=Tweet.user.profileBackgroundImageUrl}} width="48" height="48">
+                <a {{bind-attr href=tweet.user.twitterUrl}} {{bind-attr title=tweet.user.screenName}}>
+                  <img {{bind-attr src=tweet.user.profileBackgroundImageUrl}} width="48" height="48">
                 </a>
               </div>
               <div class="tweet_right">
                 <div class="tweet_screen_name">
-                  <a {{bind-attr href=Tweet.user.twitterUrl}} {{bind-attr title=Tweet.user.screenName}}>
-                    {{Tweet.user.screenName}}
+                  <a {{bind-attr href=tweet.user.twitterUrl}} {{bind-attr title=tweet.user.screenName}}>
+                    {{tweet.user.screenName}}
                   </a>
-                  <span class="tweet_name">{{Tweet.user.name}}</span>
+                  <span class="tweet_name">{{tweet.user.name}}</span>
                 </div>
-                <div class="tweet_text">{{Tweet.tweetText}}
+                <div class="tweet_text">{{tweet.tweetText}}
                   <div class="tweet_date">
-                    <a {{bind-attr href=Tweet.originalTweetUrl}} {{bind-attr title=Tweet.user.screenName}}>
-                      {{Tweet.tweetCreatedAt}}
+                    <a {{bind-attr href=tweet.originalTweetUrl}} {{bind-attr title=tweet.user.screenName}}>
+                      {{tweet.tweetCreatedAt}}
                     </a>
                   </div>
                 </div>
               </div>  
             </div>
             <hr>
+              {{/each}} 
             {{/each}}
           </div>
         </div>

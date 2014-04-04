@@ -1,6 +1,8 @@
 AFLT4::Application.routes.draw do
+  
   namespace :api do
     namespace :v1 do
+      resources :collections, only: [:index, :show]
       resources :tweets, only: [:index, :show]
       resources :raw_tweets, only: [:index, :show]
       resources :users, only: [:index, :show]

@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140316035129) do
+ActiveRecord::Schema.define(version: 20140330033153) do
+
+  create_table "collections", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "raw_tweets", force: true do |t|
     t.text     "raw"
@@ -26,6 +31,7 @@ ActiveRecord::Schema.define(version: 20140316035129) do
     t.integer  "tweet_guid",       limit: 8
     t.string   "tweet_source"
     t.integer  "user_id"
+    t.integer  "collection_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -36,6 +42,7 @@ ActiveRecord::Schema.define(version: 20140316035129) do
     t.integer  "user_guid",                    limit: 8
     t.string   "profile_background_colour"
     t.string   "profile_background_image_url"
+    t.integer  "collection_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

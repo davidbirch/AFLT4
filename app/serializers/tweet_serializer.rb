@@ -1,3 +1,4 @@
 class TweetSerializer < ActiveModel::Serializer
-  attributes :id, :tweet_text, :tweet_created_at, :tweet_guid, :tweet_source, :user_id  
+  embed :ids
+  attributes :id, :user_id, :collection_id, :tweet_text, :tweet_created_at, :tweet_guid, :tweet_source
 end
