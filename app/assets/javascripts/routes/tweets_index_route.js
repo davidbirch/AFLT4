@@ -13,7 +13,7 @@ AFLT4.TweetsIndexRoute = Ember.Route.extend({
 
 AFLT4.Pollster = {
   start: function(){
-    this.timer = setInterval(this.onPoll.bind(this), 5000);
+    this.timer = setInterval(this.onPoll.bind(this), 30000);
   },
   stop: function(){
     clearInterval(this.timer);
